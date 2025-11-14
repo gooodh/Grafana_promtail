@@ -1,0 +1,11 @@
+# prometheus.yml
+
+global:
+  scrape_interval: 3s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'node_exporter'
+    static_configs:
+      - targets: ['xxx.xxx.xxx.xxx:9100'] #  здесь указать IP хоста где работает node exporter либо - targets: ['node-exporter:9100'] если запущен на этом же хосте чрез docker compose
+
